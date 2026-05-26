@@ -1,0 +1,21 @@
+use ruchti;
+db.createUser(
+{
+    user: "user1",
+    pwd: "root1234",
+    roles: [
+    { role: "read", db: "ruchti" }
+    ]
+}
+);
+
+use admin;
+db.createUser(
+{
+    user: "user2",
+    pwd: "root1234",
+    roles: [
+    { role: "readWrite", db: "admin" }
+    ]
+}
+);

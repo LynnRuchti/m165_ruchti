@@ -1,0 +1,10 @@
+[{
+  "_id": {
+    "$oid": "6a158b30f77fc7a09f1d19ea"
+  },
+  "hight": 175,
+  "b-day": {
+    "$date": "2008-08-07T22:00:00.000Z"
+  },
+  "native_language": "German"
+}]
