@@ -34,5 +34,44 @@ follow **(m-m table)**: ein Follow hat einen Follower der einem User followt<br>
 
 ## B
 <img width="1703" height="989" alt="image" src="https://github.com/user-attachments/assets/709cf86a-e139-4ed8-9004-9620ab247853" /><br>
-like in user: da ein Like entweder ein Post oder ein Comment sein kann ist die Verschachtelung dort nur in user möglich, jedoch macht eine eigene Entität mit Referenzen für mein Konzept mehr Sinn, da ein Aufruf der Likes ein regelmässiger und zu grosser Aufwand wäre.<br>
-comment in post: do man normaler weise Comments nur in Kombination mit dem Post aufruhft, ist dies eine gute Verschachtelung und da in diesem Fall eine Redundanz nicht möglich ist kommt es nicht darauf an.<br>
+**like in user**: da ein Like entweder ein Post oder ein Comment sein kann ist die Verschachtelung dort nur in user möglich, jedoch macht eine eigene Entität mit Referenzen für mein Konzept mehr Sinn, da ein Aufruf der Likes ein regelmässiger und zu grosser Aufwand wäre.<br>
+**comment in post**: do man normaler weise Comments nur in Kombination mit dem Post aufruhft, ist dies eine gute Verschachtelung und da in diesem Fall Comments von verschiedenen Posts isoliert sind, ist eine Redundanz nicht tragisch.<br>
+
+## C
+```mongosh
+use postforum
+db.createCollection("users")
+db.createCollection("posts")
+db.createCollection("likes")
+db.createCollection("follows")
+show tables
+```
+<img width="1020" height="517" alt="image" src="https://github.com/user-attachments/assets/215f8d14-d49b-49e7-ba90-3f24d8c5340e" /><br>
+
+
+
+Später gebrauchen:<br>
+```mongosh
+db.createCollection("users", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: [ "email", "password", "user_name" ], 
+         properties: {
+            _id: {
+               bsonType: "objectId"
+            },
+            email: {
+               bsonType: "string"
+            },
+            password: {
+               bsonType: "string"
+            },
+            user_name: {
+               bsonType: "string"
+            }
+         }
+      }
+   }
+})
+```
