@@ -15,21 +15,21 @@ post: ein von einem User erstellten Post mit Titel, Inhalt(Beschreibung), Erstel
 - post 1-mc comment: ein Post kann(muss nicht) einen/mehrere Comment(s) haben
 - post 1-mc like: ein Post kann(muss nicht) einen/mehrere Like(s) haben
 
-comment: ein von einem User erstellten Comment mit Inhalt(Text) und Erstelldatum<br>
-- comment md-1 user: ein Comment braucht immer **einen** Ersteller
+comment: ein von einem User erstellten Comment mit Inhalt(Text) und Erstellungsdatum<br>
+- comment mc-1 user: ein Comment braucht immer **einen** Ersteller
 - comment mc-1 post: ein Comment braucht immer **einen** darauf kommentierten Post
-- comment mc-1 comment: ein Comment kann(muss nicht) eine Reaktion auf **einen** anderen sein
+- comment mc-1 comment: ein Comment kann(muss nicht) eine Reaktion auf **einen** anderen sein (nur benötigt wenn comment eine reaction ist)
 - comment 1-mc comment: ein Comment kann(muss nicht) eine/mehrere Reatkion(en) haben
 - comment 1-mc like: ein Comment kann(muss nicht) einen/mehrere Like(s) haben
 
-like **(m-m table)**: ein Like von einem User auf einen Content(Post/Comment)<br>
+like **(m-m table)**: ein Like von einem User auf einem Content(Post/Comment)<br>
 - like mc-1 user: ein Like muss **einen** User haben
 - like mc-1 post: ein Like muss **einen** geliketen Content haben **(wenn id_content => p...)**
 - like mc-1 comment: ein Like muss **einen** geliketen Content haben **(wenn id_content => c...)**
 
 follow **(m-m table)**: ein Follow hat einen Follower der einem User followt<br>
-- follow m-1 user: ein Follow baucht immer **einen** Follower, der einem User followt
-- follow m-1 user: ein Follow baucht immer **einen** User, dem gefollowt wird
+- follow m-1 user: ein Follow braucht immer **einen** Follower, der einem User followt
+- follow m-1 user: ein Follow braucht immer **einen** User, dem gefollowt wird
 
 
 ## B
@@ -50,7 +50,7 @@ show tables
 
 
 
-Später gebrauchen:<br>
+Später gebrauchen (Notiz):<br>
 ```mongosh
 db.createCollection("users", {
    validator: {
