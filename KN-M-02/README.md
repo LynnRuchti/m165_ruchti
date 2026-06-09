@@ -8,7 +8,7 @@ user: ein User der Platform mit Email, Passwort und einem Username<br>
 - user 1-mc comment: ein User kann(muss nicht) einen/mehrere Comment(s) erstellen
 - user 1-mc like: ein User kann(muss nicht) einen/mehrere Beitrag(e)(Post/Comment) liken
 - user 1-mc follow: ein User kann(muss nicht) einem/mehreren User(n) followen
-- user 1-mc follow: ein User kann(muss nicht) einem/mehreren Follower(s) haben
+- user 1-mc follow: ein User kann(muss nicht) einen/mehrere Follower(s) haben
 
 post: ein von einem User erstellten Post mit Titel, Inhalt(Beschreibung), Erstellungsdatum<br>
 - post mc-1 user: ein Post braucht immer **einen** Ersteller
