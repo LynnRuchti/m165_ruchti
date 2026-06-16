@@ -44,4 +44,15 @@ db.follows.insertMany([{"id_follower": ObjectId('6a28061b25fc4694ad4a8c09'), "id
 <img width="2121" height="252" alt="image" src="https://github.com/user-attachments/assets/6bb130f8-1058-4f1b-95bd-10b547a81323" /><br>
 <img width="2105" height="437" alt="image" src="https://github.com/user-attachments/assets/20235f85-2542-4175-87e4-12e901f75169" /><br><br>
 
-## B
+## C
+
+find in users:<br>
+```mongosh
+db.follows.insertOne({"id_follower": ObjectId('6a2805b625fc4694ad4a8c08'), "id_user": ObjectId('6a28061b25fc4694ad4a8c0a')})
+db.follows.insertMany([{"id_follower": ObjectId('6a28061b25fc4694ad4a8c09'), "id_user": ObjectId('6a28061b25fc4694ad4a8c0a')},
+                    {"id_follower": ObjectId('6a2805b625fc4694ad4a8c08'), "id_user": ObjectId('6a28061b25fc4694ad4a8c09')}])
+```
+<img width="2121" height="252" alt="image" src="https://github.com/user-attachments/assets/6bb130f8-1058-4f1b-95bd-10b547a81323" /><br>
+<img width="2105" height="437" alt="image" src="https://github.com/user-attachments/assets/20235f85-2542-4175-87e4-12e901f75169" /><br><br>
+
+
