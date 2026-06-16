@@ -112,3 +112,68 @@ Find all in follows:<br>
 db.follows.find()
 ```
 <img width="1111" height="767" alt="image" src="https://github.com/user-attachments/assets/f8549645-5282-45a8-bde6-b8a2efc84105" /><br><br>
+
+
+## D
+Update one in likes **(updateOne by _id)**:<br>
+```mongosh
+db.likes.find(
+    {
+        _id: ObjectId('6a2819c025fc4694ad4a8c17')
+    })
+db.likes.updateOne(
+    {
+        _id: ObjectId('6a2819c025fc4694ad4a8c17')
+    },
+    {
+        $set: {id_contend: ObjectId('6a2811a725fc4694ad4a8c10')}
+    }
+)
+db.likes.find(
+    {
+        _id: ObjectId('6a2819c025fc4694ad4a8c17')
+    })
+```
+<img width="1006" height="490" alt="image" src="https://github.com/user-attachments/assets/81ef456c-234b-45a0-978f-ab26a22eb189" /><br>
+<img width="1354" height="728" alt="image" src="https://github.com/user-attachments/assets/5d99ca8a-afe1-43af-9f04-06e88c06fea1" /><br>
+<img width="1317" height="486" alt="image" src="https://github.com/user-attachments/assets/c98dada0-1e75-4bea-95f3-e3d43f6c3dce" /><br><br>
+
+Update many in posts **(updateMany, $or)**:<br>
+```mongosh
+db.posts.find(
+        {
+        $or: [
+            {
+                title: {$regex:"Planting"}
+            },
+            {
+                title: {$regex:"first"}
+            }
+        ]
+    }
+)
+db.posts.updateMany(
+    {
+        $or: [
+            {
+                title: {$regex:"Planting"}
+            },
+            {
+                title: {$regex:"first"}
+            }
+        ]
+    },
+    { 
+        $currentDate: {
+            creation_date: true
+        },
+        $set: {
+            title:"Hello World!"
+        }
+    }
+)
+db.posts.find({title:"Hello World!"})
+```
+<img width="2093" height="913" alt="image" src="https://github.com/user-attachments/assets/2c97dbe2-feb4-4840-81ba-44f3123dd837" /><br>
+<img width="2093" height="913" alt="image" src="https://github.com/user-attachments/assets/4f4a5990-0572-47f2-87e5-5b761050c2ac" /><br>
+<img width="1317" height="486" alt="image" src="https://github.com/user-attachments/assets/c98dada0-1e75-4bea-95f3-e3d43f6c3dce" /><br><br>
