@@ -45,7 +45,7 @@ db.follows.insertMany([{"id_follower": ObjectId('6a28061b25fc4694ad4a8c09'), "id
 <img width="2105" height="437" alt="image" src="https://github.com/user-attachments/assets/20235f85-2542-4175-87e4-12e901f75169" /><br><br>
 
 ## C
-Find in posts by title containing "oven" **($regex, projection):<br>
+Find in posts by title containing "oven" **($regex, projection)**:<br>
 ```mongosh
 db.posts.find(
     {
