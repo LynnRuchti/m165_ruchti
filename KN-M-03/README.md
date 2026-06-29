@@ -177,3 +177,28 @@ db.posts.find({title:"Hello World!"})
 <img width="2093" height="913" alt="image" src="https://github.com/user-attachments/assets/2c97dbe2-feb4-4840-81ba-44f3123dd837" /><br>
 <img width="2093" height="913" alt="image" src="https://github.com/user-attachments/assets/4f4a5990-0572-47f2-87e5-5b761050c2ac" /><br>
 <img width="1317" height="486" alt="image" src="https://github.com/user-attachments/assets/c98dada0-1e75-4bea-95f3-e3d43f6c3dce" /><br><br>
+
+Replace one in users **(replaceOne)**:<br>
+```mongosh
+db.users.find({user_name: "WillyFlower"})
+db.users.replaceOne({"user_name": "WillyFlower"},
+    {
+        "email": "willyflower@email.com", 
+        "password": "flower123", 
+        "user_name": "WillyFlower33"
+    })
+db.users.find({user_name: "WillyFlower33"})
+```
+<img width="1147" height="334" alt="image" src="https://github.com/user-attachments/assets/8c9aba33-8b2e-491c-a314-00965b8420fd" /><br>
+<img width="968" height="969" alt="image" src="https://github.com/user-attachments/assets/8e8c656c-7752-4822-b2f4-0638b5294caf" /><br><br>
+
+
+## C
+Delete one in posts **(deleteOne by _id)**:<br>
+```mongosh
+db.posts.find({_id: ObjectId('6a2810ac25fc4694ad4a8c0c')})
+db.posts.deleteOne({_id: ObjectId('6a2810ac25fc4694ad4a8c0c')})
+db.posts.find({_id: ObjectId('6a2810ac25fc4694ad4a8c0c')})
+```
+<img width="2103" height="716" alt="image" src="https://github.com/user-attachments/assets/b9cfbbd1-df8e-452d-b957-c00f68c10873" /><br><br>
+
