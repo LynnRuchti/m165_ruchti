@@ -45,3 +45,12 @@ db.posts.updateMany(
     }
 )
 db.posts.find({title:"Hello World!"})
+
+db.users.find({user_name: "WillyFlower"})
+db.users.replaceOne({"user_name": "WillyFlower"},
+    {
+        "email": "willyflower@email.com", 
+        "password": "flower123", 
+        "user_name": "WillyFlower33"
+    })
+db.users.find({user_name: "WillyFlower33"})
