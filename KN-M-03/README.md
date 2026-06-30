@@ -224,29 +224,15 @@ db.follows.find()
 <img width="1072" height="530" alt="image" src="https://github.com/user-attachments/assets/14fe0c65-23b1-4df7-bb4e-b4b58b46d348" /><br>
 <img width="1053" height="282" alt="image" src="https://github.com/user-attachments/assets/c0ac669f-87c8-4481-9803-733a1213220c" /><br><br>
 
-Delete one in posts **(deleteOne by _id)**:<br>
+Delete all table **(drop)**:<br>
 ```mongosh
-db.follows.find({$or: [
-    {
-        _id: ObjectId('6a281bc025fc4694ad4a8c19')
-    },
-    {
-        _id: ObjectId('6a281b9b25fc4694ad4a8c18')
-    }]})
-db.follows.deleteMany({$or: [
-    {
-        _id: ObjectId('6a281bc025fc4694ad4a8c19')
-    },
-    {
-        _id: ObjectId('6a281b9b25fc4694ad4a8c18')
-    }]})
-db.follows.find({$or: [
-    {
-        _id: ObjectId('6a281bc025fc4694ad4a8c19')
-    },
-    {
-        _id: ObjectId('6a281b9b25fc4694ad4a8c18')
-    }]})
+show tables
+db.likes.drop()
+db.follows.drop()
+db.posts.drop()
+db.users.drop()
+show tables
 ```
-<img width="1293" height="823" alt="image" src="https://github.com/user-attachments/assets/fc63626d-88d6-4394-a4a0-afba3dc60d57" /><br>
-<img width="1269" height="901" alt="image" src="https://github.com/user-attachments/assets/3fa8cd0b-7c18-4801-91a0-a05e26d6f38a" /><br><br>
+<img width="596" height="241" alt="image" src="https://github.com/user-attachments/assets/9284cde3-9e7e-48fe-9207-0edc1a1b22dd" /><br>
+<img width="495" height="232" alt="image" src="https://github.com/user-attachments/assets/a95ca5b4-3c1d-45a8-8446-0c168dcdab08" /><br>
+<img width="468" height="85" alt="image" src="https://github.com/user-attachments/assets/dcb1b2bb-deca-44e1-b78b-47e7dfd28a06" /><br><br>
