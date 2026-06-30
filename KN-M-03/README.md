@@ -193,7 +193,7 @@ db.users.find({user_name: "WillyFlower33"})
 <img width="968" height="969" alt="image" src="https://github.com/user-attachments/assets/8e8c656c-7752-4822-b2f4-0638b5294caf" /><br><br>
 
 
-## C
+## B
 Delete one in posts **(deleteOne by _id)**:<br>
 ```mongosh
 db.posts.find({_id: ObjectId('6a2810ac25fc4694ad4a8c0c')})
@@ -202,3 +202,51 @@ db.posts.find({_id: ObjectId('6a2810ac25fc4694ad4a8c0c')})
 ```
 <img width="2103" height="716" alt="image" src="https://github.com/user-attachments/assets/b9cfbbd1-df8e-452d-b957-c00f68c10873" /><br><br>
 
+Delete many in posts **(deleteMany by _id with $or)**:<br>
+```mongosh
+db.follows.find({$or: [
+    {
+        _id: ObjectId('6a281bc025fc4694ad4a8c19')
+    },
+    {
+        _id: ObjectId('6a281b9b25fc4694ad4a8c18')
+    }]})
+db.follows.deleteMany({$or: [
+    {
+        _id: ObjectId('6a281bc025fc4694ad4a8c19')
+    },
+    {
+        _id: ObjectId('6a281b9b25fc4694ad4a8c18')
+    }]})
+db.follows.find()
+```
+<img width="1293" height="823" alt="image" src="https://github.com/user-attachments/assets/fc63626d-88d6-4394-a4a0-afba3dc60d57" /><br>
+<img width="1072" height="530" alt="image" src="https://github.com/user-attachments/assets/14fe0c65-23b1-4df7-bb4e-b4b58b46d348" /><br>
+<img width="1053" height="282" alt="image" src="https://github.com/user-attachments/assets/c0ac669f-87c8-4481-9803-733a1213220c" /><br><br>
+
+Delete one in posts **(deleteOne by _id)**:<br>
+```mongosh
+db.follows.find({$or: [
+    {
+        _id: ObjectId('6a281bc025fc4694ad4a8c19')
+    },
+    {
+        _id: ObjectId('6a281b9b25fc4694ad4a8c18')
+    }]})
+db.follows.deleteMany({$or: [
+    {
+        _id: ObjectId('6a281bc025fc4694ad4a8c19')
+    },
+    {
+        _id: ObjectId('6a281b9b25fc4694ad4a8c18')
+    }]})
+db.follows.find({$or: [
+    {
+        _id: ObjectId('6a281bc025fc4694ad4a8c19')
+    },
+    {
+        _id: ObjectId('6a281b9b25fc4694ad4a8c18')
+    }]})
+```
+<img width="1293" height="823" alt="image" src="https://github.com/user-attachments/assets/fc63626d-88d6-4394-a4a0-afba3dc60d57" /><br>
+<img width="1269" height="901" alt="image" src="https://github.com/user-attachments/assets/3fa8cd0b-7c18-4801-91a0-a05e26d6f38a" /><br><br>
