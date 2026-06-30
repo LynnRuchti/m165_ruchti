@@ -77,7 +77,7 @@ Backup Variante 1:<br>
 <img width="2188" height="1130" alt="image" src="https://github.com/user-attachments/assets/681ee990-2107-43a8-83b2-22f80f2086e9" /><br>
 <img width="2641" height="862" alt="image" src="https://github.com/user-attachments/assets/091074a7-e67d-4e9f-9df8-5f572ade3903" /><br>
 <img width="2286" height="617" alt="image" src="https://github.com/user-attachments/assets/d55011d4-9cff-4e13-bef2-8d7766fb7338" /><br>
-
+Das Volume brauchte zu lange Zeit zum inizialisieren.<br>
 
 Backup Variante 2:<br>
 ```ssh
